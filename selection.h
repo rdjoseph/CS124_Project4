@@ -10,7 +10,7 @@
 
 
 template<typename Comparable>
-void selectionSort(std::vector<Comparable> &v, std::shared_ptr<int> read, std::shared_ptr<int> write) {
+void selectionSort(std::vector<Comparable> &v, int* read, int* write) {
     if (!v.empty()) {
         Comparable min = v[0], temp;
         (*read)++;

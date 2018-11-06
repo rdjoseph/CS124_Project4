@@ -4,6 +4,18 @@
 
 #include "WeatherSummaries.h"
 
+WeatherSummary::WeatherSummary()
+{
+    stationID = "001WX";
+    location = "Vermont";
+    precipitation = 0.5;
+    snowFall = 1.5;
+    snowDepth = 2.5;
+    date.year = 2000;
+    date.month = 1;
+    date.day = 1;
+}
+
 WeatherSummary::WeatherSummary(std::string inStationID, std::string inLocation, std::string inDate, double inPrecipitation, double inSnowFall, double inSnowDepth)
 {
     stationID = inStationID;
@@ -160,16 +172,21 @@ void makeVector(std::vector<WeatherSummary>& weatherData, int size)
 
 
 
-
+    /*
     unsigned seed = 8675309; //I don't want true randomness, so I'm going to use a fixed seed.
     std::default_random_engine e(seed);
     shuffle(processVector.begin(),processVector.end(), e);
+
+     */
 
     //Loop through and emplace desired number onto passed in pointer
     for(int i = 0; i < size; i++)
     {
         weatherData.emplace_back(processVector.at(i));
     }
+
+   // printVector(processVector,std::cout);
+    //std::cout << std::endl;
 
 
 };

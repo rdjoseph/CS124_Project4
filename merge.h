@@ -9,12 +9,12 @@
 #include <memory>
 
 template <typename Comparable>
-void mergeSort(std::vector<Comparable> &v, std::shared_ptr<int> read, std::shared_ptr<int> write) {
+void mergeSort(std::vector<Comparable> &v, int* read, int* write) {
     split(v, 0, v.size() - 1, read, write);
 }
 
 template <typename Comparable>
-void split(std::vector<Comparable> &v, int start, int end, std::shared_ptr<int> read, std::shared_ptr<int> write) {
+void split(std::vector<Comparable> &v, int start, int end, int* read, int* write) {
     int length = end - start;
     // TODO: fixed this base case
     // Base case to stop recursion: start = end
@@ -25,9 +25,9 @@ void split(std::vector<Comparable> &v, int start, int end, std::shared_ptr<int> 
     // TODO: fixed this to add start
     int center = start + (length / 2);
     // Recursive call for left side
-    split(v, start, center);
+    split(v, start, center, read, write);
     // Recursive call for right side
-    split(v, center + 1, end);
+    split(v, center + 1, end, read, write);
 
     // Assume the recursive calls make each half sorted
     // Now we need to merge the two halves together
@@ -35,7 +35,7 @@ void split(std::vector<Comparable> &v, int start, int end, std::shared_ptr<int> 
 }
 
 template <typename Comparable>
-void merge(std::vector<Comparable> &v, int start, int center, int end,std::shared_ptr<int> read, std::shared_ptr<int> write) {
+void merge(std::vector<Comparable> &v, int start, int center, int end,int* read, int* write) {
     std::vector<Comparable> temp;
     int c = center, s = start;
     // Keep choosing the smallest item between the halves
@@ -68,7 +68,7 @@ void merge(std::vector<Comparable> &v, int start, int center, int end,std::share
         v[s + i] = temp[i];
         (*write)++;
     }
-    printVector(v);
+
 }
 
 #endif //CS124PROJECT_4_MERGE_H

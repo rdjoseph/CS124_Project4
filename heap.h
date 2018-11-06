@@ -9,7 +9,7 @@
 #include <memory>
 
 template <typename Comparable>
-void heapSort(std::vector<Comparable> &v, std::shared_ptr<int> read, std::shared_ptr<int> write) {
+void heapSort(std::vector<Comparable> &v, int* read, int* write) {
     // build the heap (with max value at root)
     for(int i = v.size( ) / 2 - 1; i >= 0; --i) {
         percolateDown(v, i, v.size(), read, write);
@@ -24,7 +24,7 @@ void heapSort(std::vector<Comparable> &v, std::shared_ptr<int> read, std::shared
         (*read)++;
         (*write) += 2;
 
-        percolateDown(v, 0, j);
+        percolateDown(v, 0, j, read, write);
     }
 }
 
@@ -35,7 +35,7 @@ inline int leftChild(int i) {
 // i is the index of the value being percolated down
 // n is the number of items in the heap
 template <typename Comparable>
-void percolateDown(std::vector<Comparable> &v, int i, int n,  std::shared_ptr<int> read, std::shared_ptr<int> write) {
+void percolateDown(std::vector<Comparable> &v, int i, int n,  int* read, int* write) {
     int child;
     Comparable tmp;
 

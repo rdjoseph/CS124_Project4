@@ -35,7 +35,7 @@ private:
             snowFall,      //Average snow fall on this date
             snowDepth;     //Average snow depth on this date
 public:
-
+    WeatherSummary();
 
     WeatherSummary(std::string inStationID, std::string inLocation, std::string inDate, double inPrecipitation, double inSnowFall, double inSnowDepth);
 
