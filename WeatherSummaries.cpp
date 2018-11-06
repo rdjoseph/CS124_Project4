@@ -137,9 +137,9 @@ void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out)
     }
 }
 
-void makeVector(std::vector<WeatherSummary>& weatherData, int size)
+void makeVector(std::vector<WeatherSummary>& weatherData)
 {
-    std::vector<WeatherSummary> processVector;
+
     std::string  station = "",       //Station ID
             location = "",      //Location of taken data
             junk = "",          //For forcing program to read newline character
@@ -166,39 +166,12 @@ void makeVector(std::vector<WeatherSummary>& weatherData, int size)
         f_in >> snowDepth;
         getline(f_in, junk);
         //Make the new object inside the vector itself
-        processVector.emplace_back(WeatherSummary(station,location,date,precipitation,snowFall,snowDepth));
+        weatherData.emplace_back(WeatherSummary(station,location,date,precipitation,snowFall,snowDepth));
     }
     f_in.close();
 
-
-
-    /*
     unsigned seed = 8675309; //I don't want true randomness, so I'm going to use a fixed seed.
     std::default_random_engine e(seed);
-    shuffle(processVector.begin(),processVector.end(), e);
-
-     */
-
-    //Loop through and emplace desired number onto passed in pointer
-    for(int i = 0; i < size; i++)
-    {
-        weatherData.emplace_back(processVector.at(i));
-    }
-
-   // printVector(processVector,std::cout);
-    //std::cout << std::endl;
-
-
+    shuffle(weatherData.begin(),weatherData.end(), e);
 };
-
-void makeVectors(std::vector<std::vector<WeatherSummary>>& compilation)
-{
-    //Start with empty vector of vectors, add a vector to it, and modify that vector to have the data
-    //By using (i+1)*100, which should work out to 100, 200, 300, etc
-    for(int i = 0; i < 10; i++)
-    {
-        compilation.emplace_back(std::vector<WeatherSummary>()); //Make an empty vector of weather summaries and emplace it back
-        makeVector(compilation.at(i),((i+1)*100)); //Modify it inside the compilation vector
-    }
-}
 

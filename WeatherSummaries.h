@@ -68,8 +68,7 @@ public:
 
 };
 
-void makeVector(std::vector<WeatherSummary>& weatherData, int size); //Makes individual vectors of size size
-void makeVectors(std::vector<std::vector<WeatherSummary>>& compilation); //Makes compendiums of vectors at all appropriate sizes
+void makeVector(std::vector<WeatherSummary>& weatherData);
 void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out);
 
 #endif //CS124PROJECT_4_WEATHERSUMMARIES_H

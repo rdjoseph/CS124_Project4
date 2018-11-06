@@ -21,13 +21,19 @@
 using namespace std;
 
 int main() {
-    //I'm going to make a vector of vectors for each sorting algorithm, that contains the ten vectors of varying sizes.
+    //I'm going to make a vector for each algorithm to use, and resize with each loop through.
     //Because I shuffled with a fixed seed, these should all come out identically.
-
-    std::vector<WeatherSummary> weatherData;
-    makeVector(weatherData,1200);
-    printVector(weatherData,cout);
-    cout << endl;
+    vector<WeatherSummary> bubble,
+                           heap,
+                           merge,
+                           selection,
+                           two;
+    makeVector(bubble);
+    makeVector(heap);
+    makeVector(merge);
+    makeVector(selection);
+    makeVector(two);
+    
 
 
 

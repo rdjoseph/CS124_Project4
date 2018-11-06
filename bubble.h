@@ -6,8 +6,10 @@
 #define CS124PROJECT_4_BUBBLE_H
 
 #include <vector>
-#include <ostream>
-#include <memory>
+
+
+
+//right-read, left-write
 
 
 template<typename Comparable>
@@ -20,8 +22,7 @@ void bubbleSort(std::vector<Comparable> &v, long* read, long* write) {
         for (int index = 0; index < sortedIndex - 1; ++index) {
             (*read) += 2;
             if (v[index] > v[index + 1]) {
-                // swap
-               // read++;
+
                 Comparable temp = v[index];
                 v[index] = v[index + 1];
                 v[index + 1] = temp;

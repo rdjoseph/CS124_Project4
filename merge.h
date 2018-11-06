@@ -6,15 +6,17 @@
 #define CS124PROJECT_4_MERGE_H
 
 #include <vector>
-#include <memory>
+
+
+//right-read,left-write
 
 template <typename Comparable>
-void mergeSort(std::vector<Comparable> &v, int* read, int* write) {
+void mergeSort(std::vector<Comparable> &v, long* read, long* write) {
     split(v, 0, v.size() - 1, read, write);
 }
 
 template <typename Comparable>
-void split(std::vector<Comparable> &v, int start, int end, int* read, int* write) {
+void split(std::vector<Comparable> &v, int start, int end, long* read, long* write) {
     int length = end - start;
     // TODO: fixed this base case
     // Base case to stop recursion: start = end
@@ -35,7 +37,7 @@ void split(std::vector<Comparable> &v, int start, int end, int* read, int* write
 }
 
 template <typename Comparable>
-void merge(std::vector<Comparable> &v, int start, int center, int end,int* read, int* write) {
+void merge(std::vector<Comparable> &v, int start, int center, int end, long* read, long* write) {
     std::vector<Comparable> temp;
     int c = center, s = start;
     // Keep choosing the smallest item between the halves
@@ -49,7 +51,7 @@ void merge(std::vector<Comparable> &v, int start, int center, int end,int* read,
             temp.push_back(v[center + 1]);
             ++center;
         }
-        (*write)++;
+        (*write)++; //Whether it's if or else, it writes once for every loop
     }
 
     while (start <= c || center + 1 <= end) {

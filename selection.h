@@ -6,11 +6,12 @@
 #define CS124PROJECT_4_SELECTION_H
 
 #include <vector>
-#include <memory>
 
+
+//right-read,left-write
 
 template<typename Comparable>
-void selectionSort(std::vector<Comparable> &v, int* read, int* write) {
+void selectionSort(std::vector<Comparable> &v, long* read, long* write) {
     if (!v.empty()) {
         Comparable min = v[0], temp;
         (*read)++;
@@ -25,6 +26,7 @@ void selectionSort(std::vector<Comparable> &v, int* read, int* write) {
                     // we found a new minimum value
                     min = v[i];
                     minIndex = i;
+                    (*read)++;
                 }
             }
             if (minIndex != swapIndex) {
@@ -33,6 +35,7 @@ void selectionSort(std::vector<Comparable> &v, int* read, int* write) {
                 v[minIndex] = v[swapIndex];
                 v[swapIndex] = temp;
                 (*write) += 2;
+                (*read) += 2;
             }
 
         }

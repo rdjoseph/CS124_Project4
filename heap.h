@@ -6,10 +6,12 @@
 #define CS124PROJECT_4_HEAP_H
 
 #include <vector>
-#include <memory>
+
+
+//right-read,left-write
 
 template <typename Comparable>
-void heapSort(std::vector<Comparable> &v, int* read, int* write) {
+void heapSort(std::vector<Comparable> &v, long* read, long* write) {
     // build the heap (with max value at root)
     for(int i = v.size( ) / 2 - 1; i >= 0; --i) {
         percolateDown(v, i, v.size(), read, write);
@@ -35,7 +37,7 @@ inline int leftChild(int i) {
 // i is the index of the value being percolated down
 // n is the number of items in the heap
 template <typename Comparable>
-void percolateDown(std::vector<Comparable> &v, int i, int n,  int* read, int* write) {
+void percolateDown(std::vector<Comparable> &v, int i, int n,  long* read, long* write) {
     int child;
     Comparable tmp;
 
