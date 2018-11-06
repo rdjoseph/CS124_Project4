@@ -21,10 +21,6 @@ using namespace std;
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
-    vector<int> shuffler;
-    unsigned seed = 8675309; //I don't want true randomness, so I'm going to use a fixed seed.
-    std::default_random_engine e(seed);
-    shuffle(shuffler.begin(),shuffler.end(), e);
 
 
 

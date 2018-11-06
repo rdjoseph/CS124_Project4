@@ -2,7 +2,7 @@
 // Created by RDJ on 11/5/2018.
 //
 
-#include "WeatherSummary.h"
+#include "WeatherSummaries.h"
 
 WeatherSummary::WeatherSummary(std::string inStationID, std::string inLocation, std::string inDate, double inPrecipitation, double inSnowFall, double inSnowDepth)
 {
@@ -119,7 +119,7 @@ std::ostream &operator <<(std::ostream& out, WeatherSummary weather)
 
 void makeVector(std::vector<WeatherSummary>& weatherData, int size)
 {
-    vector<WeatherSummary> processVector;
+    std::vector<WeatherSummary> processVector;
     std::string  station = "",       //Station ID
             location = "",      //Location of taken data
             junk = "",          //For forcing program to read newline character
@@ -162,3 +162,11 @@ void makeVector(std::vector<WeatherSummary>& weatherData, int size)
     }
 
 };
+
+void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out)
+{
+    for(int i = 0; i < weatherData.size(); i++)
+    {
+        out << weatherData.at(i);
+    }
+}

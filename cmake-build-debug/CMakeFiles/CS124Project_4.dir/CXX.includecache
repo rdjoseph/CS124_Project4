@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/RDJ/CLionProjects/CS124Project_4/WeatherSummaries.cpp
+WeatherSummaries.h
+C:/Users/RDJ/CLionProjects/CS124Project_4/WeatherSummaries.h
+
+C:/Users/RDJ/CLionProjects/CS124Project_4/WeatherSummaries.h
+algorithm
+-
+chrono
+-
+string
+-
+iostream
+-
+iomanip
+-
+fstream
+-
+random
+-
+sstream
+-
+vector
+-
+

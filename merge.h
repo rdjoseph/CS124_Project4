@@ -5,13 +5,16 @@
 #ifndef CS124PROJECT_4_MERGE_H
 #define CS124PROJECT_4_MERGE_H
 
+#include <vector>
+#include <memory>
+
 template <typename Comparable>
-void mergeSort(vector<Comparable> &v) {
-    split(v, 0, v.size() - 1);
+void mergeSort(std::vector<Comparable> &v, std::shared_ptr<int> read, std::shared_ptr<int> write) {
+    split(v, 0, v.size() - 1, read, write);
 }
 
 template <typename Comparable>
-void split(vector<Comparable> &v, int start, int end) {
+void split(std::vector<Comparable> &v, int start, int end, std::shared_ptr<int> read, std::shared_ptr<int> write) {
     int length = end - start;
     // TODO: fixed this base case
     // Base case to stop recursion: start = end
@@ -28,16 +31,17 @@ void split(vector<Comparable> &v, int start, int end) {
 
     // Assume the recursive calls make each half sorted
     // Now we need to merge the two halves together
-    merge(v, start, center, end);
+    merge(v, start, center, end, read, write);
 }
 
 template <typename Comparable>
-void merge(vector<Comparable> &v, int start, int center, int end) {
-    vector<Comparable> temp;
+void merge(std::vector<Comparable> &v, int start, int center, int end,std::shared_ptr<int> read, std::shared_ptr<int> write) {
+    std::vector<Comparable> temp;
     int c = center, s = start;
     // Keep choosing the smallest item between the halves
     // Until one half empties
     while (start <= c && center + 1 <= end) {
+        (*read) += 2;
         if (v[start] < v[center + 1]) {
             temp.push_back(v[start]);
             ++start;
@@ -45,6 +49,7 @@ void merge(vector<Comparable> &v, int start, int center, int end) {
             temp.push_back(v[center + 1]);
             ++center;
         }
+        (*write)++;
     }
 
     while (start <= c || center + 1 <= end) {
@@ -55,11 +60,13 @@ void merge(vector<Comparable> &v, int start, int center, int end) {
             temp.push_back(v[center + 1]);
             ++center;
         }
+        (*write)++;
     }
 
     // Now copy everything back from temp into v
     for (int i = 0; i < temp.size(); ++i) {
         v[s + i] = temp[i];
+        (*write)++;
     }
     printVector(v);
 }
