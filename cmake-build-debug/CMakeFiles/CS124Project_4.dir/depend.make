@@ -4,6 +4,7 @@
 CMakeFiles/CS124Project_4.dir/WeatherSummaries.cpp.obj: ../WeatherSummaries.cpp
 CMakeFiles/CS124Project_4.dir/WeatherSummaries.cpp.obj: ../WeatherSummaries.h
 
+CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../WeatherSummaries.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../bubble.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../heap.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../main.cpp

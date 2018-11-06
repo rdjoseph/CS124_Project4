@@ -117,6 +117,14 @@ std::ostream &operator <<(std::ostream& out, WeatherSummary weather)
 
 //OTHER FUNCTIONS THAT ARE NOT PART OF THE WEATHER SUMMARY CLASS
 
+void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out)
+{
+    for(int i = 0; i < weatherData.size(); i++)
+    {
+        out << weatherData.at(i);
+    }
+}
+
 void makeVector(std::vector<WeatherSummary>& weatherData, int size)
 {
     std::vector<WeatherSummary> processVector;
@@ -150,7 +158,9 @@ void makeVector(std::vector<WeatherSummary>& weatherData, int size)
     }
     f_in.close();
 
-    //Now shuffle the vector
+
+
+
     unsigned seed = 8675309; //I don't want true randomness, so I'm going to use a fixed seed.
     std::default_random_engine e(seed);
     shuffle(processVector.begin(),processVector.end(), e);
@@ -161,12 +171,17 @@ void makeVector(std::vector<WeatherSummary>& weatherData, int size)
         weatherData.emplace_back(processVector.at(i));
     }
 
+
 };
 
-void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out)
+void makeVectors(std::vector<std::vector<WeatherSummary>>& compilation)
 {
-    for(int i = 0; i < weatherData.size(); i++)
+    //Start with empty vector of vectors, add a vector to it, and modify that vector to have the data
+    //By using (i+1)*100, which should work out to 100, 200, 300, etc
+    for(int i = 0; i < 10; i++)
     {
-        out << weatherData.at(i);
+        compilation.emplace_back(std::vector<WeatherSummary>()); //Make an empty vector of weather summaries and emplace it back
+        makeVector(compilation.at(i),((i+1)*100)); //Modify it inside the compilation vector
     }
 }
+
