@@ -16,8 +16,6 @@
 #include <sstream>
 #include <vector>
 
-//To make <, >,
-
 struct Date
 {
     int year;

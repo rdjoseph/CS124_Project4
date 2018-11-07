@@ -76,11 +76,11 @@ bool operator <(const WeatherSummary &lhs, const WeatherSummary &rhs)
     {
         return true;
     }
-    else if(lhs.getDate().month < rhs.getDate().month)
+    if(lhs.getDate().month < rhs.getDate().month)
     {
         return true;
     }
-    else if(lhs.getDate().day < rhs.getDate().day)
+    if(lhs.getDate().day > rhs.getDate().day)
     {
         return true;
     }
@@ -98,7 +98,7 @@ bool operator >(const WeatherSummary &lhs, const WeatherSummary &rhs)
     {
         return true;
     }
-    else if(lhs.getDate().day > rhs.getDate().day)
+    else if(lhs.getDate().day < rhs.getDate().day)
     {
         return true;
     }
@@ -164,9 +164,6 @@ void makeVector(std::vector<WeatherSummary>& weatherData)
     }
     f_in.close();
 
-    unsigned seed = 8675309; //I don't want true randomness, so I'm going to use a fixed seed.
-    std::default_random_engine e(seed);
-    shuffle(weatherData.begin(),weatherData.end(), e);
 };
 
 void shuffleVector(std::vector<WeatherSummary>& weatherData)
