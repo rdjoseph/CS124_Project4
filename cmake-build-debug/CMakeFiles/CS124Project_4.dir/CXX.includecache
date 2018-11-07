@@ -34,6 +34,12 @@ C:/Users/RDJ/CLionProjects/CS124Project_4/heap.h
 vector
 -
 
+C:/Users/RDJ/CLionProjects/CS124Project_4/insert.h
+iostream
+-
+vector
+-
+
 C:/Users/RDJ/CLionProjects/CS124Project_4/main.cpp
 algorithm
 -
@@ -57,8 +63,12 @@ bubble.h
 C:/Users/RDJ/CLionProjects/CS124Project_4/bubble.h
 heap.h
 C:/Users/RDJ/CLionProjects/CS124Project_4/heap.h
+insert.h
+C:/Users/RDJ/CLionProjects/CS124Project_4/insert.h
 merge.h
 C:/Users/RDJ/CLionProjects/CS124Project_4/merge.h
+quick.h
+C:/Users/RDJ/CLionProjects/CS124Project_4/quick.h
 selection.h
 C:/Users/RDJ/CLionProjects/CS124Project_4/selection.h
 two.h
@@ -67,6 +77,10 @@ WeatherSummaries.h
 C:/Users/RDJ/CLionProjects/CS124Project_4/WeatherSummaries.h
 
 C:/Users/RDJ/CLionProjects/CS124Project_4/merge.h
+vector
+-
+
+C:/Users/RDJ/CLionProjects/CS124Project_4/quick.h
 vector
 -
 

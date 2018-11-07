@@ -11,16 +11,11 @@
 //right-read,left-write
 
 
-
-
-
-
-
 template <typename Comparable>
-void heapSort(std::vector<Comparable> &v) {
+void heapSort(std::vector<Comparable> &v, long* read, long* write) {
     // build the heap (with max value at root)
     for(int i = v.size( ) / 2 - 1; i >= 0; --i) {
-        percolateDown(v, i, v.size());
+        percolateDown(v, i, v.size(), read, write);
     }
 
     // keep deleting the max
@@ -29,8 +24,10 @@ void heapSort(std::vector<Comparable> &v) {
         Comparable temp = v[0];
         v[0] = v[j];
         v[j] = temp;
+        (*read)+=2;
+        (*write)+=2;
 
-        percolateDown(v, 0, j);
+        percolateDown(v, 0, j, read, write);
 
     }
 }
@@ -42,24 +39,30 @@ inline int leftChild(int i) {
 // i is the index of the value being percolated down
 // n is the number of items in the heap
 template <typename Comparable>
-void percolateDown(std::vector<Comparable> &v, int i, int n) {
+void percolateDown(std::vector<Comparable> &v, int i, int n, long* read, long* write) {
     int child;
     Comparable tmp;
 
+    (*read)++;
     for(tmp = v[i]; leftChild(i) < n; i = child) {
         child = leftChild(i);
         // choose the child with the larger value
+        (*read)+=2;
         if (child != n - 1 && v[child] < v[child + 1]) {
             ++child;
         }
         // if the parent is less than the child, swap them
+        (*read)++;
         if (tmp < v[child]) {
             v[i] = v[child];
+            (*read)++;
+            (*write)++;
         } else {
             // parent is >= both children. nothing more to do.
             break;
         }
     }
+    (*write)++;
     v[i] = tmp;
 }
 #endif //CS124PROJECT_4_HEAP_H

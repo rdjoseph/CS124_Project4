@@ -7,8 +7,10 @@ CMakeFiles/CS124Project_4.dir/WeatherSummaries.cpp.obj: ../WeatherSummaries.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../WeatherSummaries.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../bubble.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../heap.h
+CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../insert.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../merge.h
+CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../quick.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../selection.h
 CMakeFiles/CS124Project_4.dir/main.cpp.obj: ../two.h
 
