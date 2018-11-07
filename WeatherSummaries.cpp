@@ -76,11 +76,11 @@ bool operator <(const WeatherSummary &lhs, const WeatherSummary &rhs)
     {
         return true;
     }
-    if(lhs.getDate().month < rhs.getDate().month)
+    if(lhs.getDate().year == rhs.getDate().year && lhs.getDate().month < rhs.getDate().month)
     {
         return true;
     }
-    if(lhs.getDate().day > rhs.getDate().day)
+    if(lhs.getDate().year == rhs.getDate().year && lhs.getDate().month == rhs.getDate().month && lhs.getDate().day < rhs.getDate().day)
     {
         return true;
     }
@@ -94,11 +94,11 @@ bool operator >(const WeatherSummary &lhs, const WeatherSummary &rhs)
     {
         return true;
     }
-    else if(lhs.getDate().month > rhs.getDate().month)
+    if(lhs.getDate().year == rhs.getDate().year && lhs.getDate().month > rhs.getDate().month)
     {
         return true;
     }
-    else if(lhs.getDate().day < rhs.getDate().day)
+    if(lhs.getDate().year == rhs.getDate().year && lhs.getDate().month == rhs.getDate().month && lhs.getDate().day > rhs.getDate().day)
     {
         return true;
     }
