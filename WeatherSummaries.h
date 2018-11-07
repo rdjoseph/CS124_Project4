@@ -69,6 +69,7 @@ public:
 };
 
 void makeVector(std::vector<WeatherSummary>& weatherData);
+void shuffleVector(std::vector<WeatherSummary> & weatherData);
 void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out);
 
 #endif //CS124PROJECT_4_WEATHERSUMMARIES_H

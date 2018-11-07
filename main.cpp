@@ -26,34 +26,38 @@ int main() {
     vector<WeatherSummary> bubble,
                            heap,
                            merge,
-                           selection,
-                           two;
+                           selection;
+                         //  two;
     makeVector(bubble);
     makeVector(heap);
     makeVector(merge);
     makeVector(selection);
-    makeVector(two);
-    
+   // makeVector(two);
+
+    bubble.resize(1000);
+    heap.resize(1000);
+    merge.resize(1000);
+    selection.resize(1000);
+   // two.resize(1000);
 
 
 
-
-    //If you need proof that they're the same, here's a section that does that
+    //If you need proof that they're all in the same order, here's a section that does that
     /*
-    cout << "Bubble vector of 100" << endl;
-    printVector((bubble.at(0)),cout);
+    cout << "Bubble vector" << endl;
+    printVector(bubble),cout);
     cout << endl;
 
-    cout << "Heap vector of 100" << endl;
-    printVector((heap.at(0)),cout);
+    cout << "Heap vector" << endl;
+    printVector((heap),cout);
     cout << endl;
 
-    cout << "Merge vector of 100" << endl;
-    printVector((merge.at(0)),cout);
+    cout << "Merge vector" << endl;
+    printVector((merge),cout);
     cout << endl;
 
-    cout << "Selection vector of 100" << endl;
-    printVector((selection.at(0)),cout);
+    cout << "Selection vector" << endl;
+    printVector((selection),cout);
     cout << endl;
     */
 
@@ -63,10 +67,10 @@ int main() {
     long* write = new long;
     *read = 0;
     *write = 0;
-
-    bubbleSort(weatherData, read, write);
-
     /* Do with a thousand, then resize, */
+
+
+
 
 
 

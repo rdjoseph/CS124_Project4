@@ -129,13 +129,7 @@ std::ostream &operator <<(std::ostream& out, WeatherSummary weather)
 
 //OTHER FUNCTIONS THAT ARE NOT PART OF THE WEATHER SUMMARY CLASS
 
-void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out)
-{
-    for(int i = 0; i < weatherData.size(); i++)
-    {
-        out << weatherData.at(i);
-    }
-}
+
 
 void makeVector(std::vector<WeatherSummary>& weatherData)
 {
@@ -174,4 +168,20 @@ void makeVector(std::vector<WeatherSummary>& weatherData)
     std::default_random_engine e(seed);
     shuffle(weatherData.begin(),weatherData.end(), e);
 };
+
+void shuffleVector(std::vector<WeatherSummary>& weatherData)
+{
+    unsigned seed = 8675309; //I don't want true randomness, so I'm going to use a fixed seed.
+    std::default_random_engine e(seed);
+    shuffle(weatherData.begin(),weatherData.end(), e);
+}
+
+
+void printVector(std::vector<WeatherSummary>& weatherData, std::ostream& out)
+{
+    for(int i = 0; i < weatherData.size(); i++)
+    {
+        out << weatherData.at(i);
+    }
+}
 
