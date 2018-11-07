@@ -74,69 +74,69 @@ int main() {
     *read = 0;
     *write = 0;
 
-//    // I need two CSV Files. One for reads, one for writes. Let's call them read.csv and write.csv
-//    //setup: bubble, heap, merge, selection, two
-//    ofstream readFile("read.csv");
-//    readFile << "Bubble, Heap, Merge, Sel, Two \n";
-//    ofstream writeFile("write.csv");
-//    writeFile << "Bubble, Heap, Merge, Sel, Two \n";
-//
-//    //For each sort, shuffle the vector (fixed randomness with seed 867509)
-//    // sort, write to read file, write to write file, reset reads & writes,  resize vector
-//    for(int i = 9; i > 0; i--)
-//    {
-//        //Bubble sort
-//        shuffleVector(bubble);
-//        bubbleSort(bubble,read,write);
-//        readFile << *read << ",";
-//        writeFile << *write << ",";
-//        *read = 0;
-//        *write = 0;
-//        bubble.resize((i*100));
-//
-//
-//        //Heap sort
-//        shuffleVector(heap);
-//        heapSort(heap,read,write);
-//        readFile << *read << ",";
-//        writeFile << *write << ",";
-//        *read = 0;
-//        *write = 0;
-//        heap.resize((i*100));
-//
-//
-//        //Merge sort
-//        shuffleVector(merge);
-//        mergeSort(merge,read,write);
-//        readFile << *read << ",";
-//        writeFile << *write << ",";
-//        *read = 0;
-//        *write = 0;
-//        merge.resize((i*100));
-//
-//
-//        //Selection sort
-//        shuffleVector(selection);
-//        selectionSort(selection,read,write);
-//        readFile << *read << ",";
-//        writeFile << *write << ",";
-//        *read = 0;
-//        *write = 0;
-//        selection.resize((i*100));
-//
-//
-//        //Two-sort: Merge then selection by precipitation
-//        shuffleVector(heap);
-//        twoSort(two,read,write);
-//        readFile << read << "\n";
-//        writeFile << write << "\n";
-//        *read = 0;
-//        *write = 0;
-//        two.resize((i*100));
-//
-//    }
-//    readFile.close();
-//    writeFile.close();
+    // I need two CSV Files. One for reads, one for writes. Let's call them read.csv and write.csv
+    //setup: bubble, heap, merge, selection, two
+    ofstream readFile("read.csv");
+    readFile << "Bubble, Heap, Merge, Sel, Two \n";
+    ofstream writeFile("write.csv");
+    writeFile << "Bubble, Heap, Merge, Sel, Two \n";
+
+    //For each sort, shuffle the vector (fixed randomness with seed 867509)
+    // sort, write to read file, write to write file, reset reads & writes,  resize vector
+    for(int i = 9; i > 0; i--)
+    {
+        //Bubble sort
+        shuffleVector(bubble);
+        bubbleSort(bubble,read,write);
+        readFile << *read << ",";
+        writeFile << *write << ",";
+        *read = 0;
+        *write = 0;
+        bubble.resize((i*100));
+
+
+        //Heap sort
+        shuffleVector(heap);
+        heapSort(heap,read,write);
+        readFile << *read << ",";
+        writeFile << *write << ",";
+        *read = 0;
+        *write = 0;
+        heap.resize((i*100));
+
+
+        //Merge sort
+        shuffleVector(merge);
+        mergeSort(merge,read,write);
+        readFile << *read << ",";
+        writeFile << *write << ",";
+        *read = 0;
+        *write = 0;
+        merge.resize((i*100));
+
+
+        //Selection sort
+        shuffleVector(selection);
+        selectionSort(selection,read,write);
+        readFile << *read << ",";
+        writeFile << *write << ",";
+        *read = 0;
+        *write = 0;
+        selection.resize((i*100));
+
+
+        //Two-sort: Merge then selection by precipitation
+        shuffleVector(heap);
+        twoSort(two,read,write);
+        readFile << *read << "\n";
+        writeFile << *write << "\n";
+        *read = 0;
+        *write = 0;
+        two.resize((i*100));
+
+    }
+    readFile.close();
+    writeFile.close();
 
     bubbleSort(bubble,read, write);
     *read = 0;
@@ -146,6 +146,22 @@ int main() {
 
     cout << "Bubble" << endl;
     printVector(bubble,cout);
+    cout << endl;
+
+    cout << "Heap" << endl;
+    printVector(heap,cout);
+    cout << endl;
+
+    cout << "Merge" << endl;
+    printVector(merge,cout);
+    cout << endl;
+
+    cout << "Selection" << endl;
+    printVector(selection,cout);
+    cout << endl;
+
+    cout << "Two Sort (Merge, then Selection by precipitation" << endl;
+    printVector(two,cout);
     cout << endl;
 
 
