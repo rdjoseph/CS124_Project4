@@ -83,10 +83,10 @@
 		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/WeatherSummaries.cpp">
 			<Option target="CS124Project_4"/>
 		</Unit>
-		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/bubble.h">
+		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/WeatherSummaries.h">
 			<Option target="CS124Project_4"/>
 		</Unit>
-		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/cmake-build-debug/WeatherSummaries.h">
+		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/bubble.h">
 			<Option target="CS124Project_4"/>
 		</Unit>
 		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/heap.h">
@@ -99,6 +99,9 @@
 			<Option target="CS124Project_4"/>
 		</Unit>
 		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/selection.h">
+			<Option target="CS124Project_4"/>
+		</Unit>
+		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/two.h">
 			<Option target="CS124Project_4"/>
 		</Unit>
 		<Unit filename="C:/Users/RDJ/CLionProjects/CS124Project_4/CMakeLists.txt">
