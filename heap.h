@@ -22,7 +22,7 @@ void heapSort(std::vector<Comparable> &v) {
     for(int i = v.size( ) / 2 - 1; i >= 0; --i) {
         percolateDown(v, i, v.size());
     }
-    printVector(v);
+
     // keep deleting the max
     for(int j = v.size( ) - 1; j > 0; --j) {
         // swap a[0] and a[j]
@@ -32,7 +32,6 @@ void heapSort(std::vector<Comparable> &v) {
 
         percolateDown(v, 0, j);
 
-        printVector(v);
     }
 }
 
